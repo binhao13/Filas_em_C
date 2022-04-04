@@ -22,8 +22,21 @@ void enfileira(int dado,FILA *f){
         ptr->prox = NULL;
         if(f->ini == NULL){
             f->ini = ptr;
-        }
+        }else{
+        f->fim->prox = ptr;
+         }
         f->fim = ptr;
 
+    }
+}
+
+int desenfileira (FILA *f){
+    NO *ptr = f->ini;
+    int dado;
+    if(ptr != NULL){
+        f->ini = ptr->prox;
+    }else{
+        printf("Fila vazia \n");
+        return;
     }
 }
